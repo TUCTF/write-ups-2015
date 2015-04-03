@@ -12,7 +12,7 @@ from pwn import *
 # Install of pwntools is a simple pip install pwntools
 context(arch = 'i386', os = 'linux')
 # Should work even when they take servers down. There will
-# need to be a local file called 'flag'. Put something
+# need to be a local file called 'flag'. Pro tip: put something
 # recognizable in it.
 if 'HOST' in args:
     r = remote(args['HOST'], int(args['PORT']))
