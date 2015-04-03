@@ -1,2 +1,2 @@
-# write-ups-2015
-Repository for TU's CTF team write-ups
+# Write-Ups-2015
+This is a repository for TU's CTF team write-ups
