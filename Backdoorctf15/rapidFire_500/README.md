@@ -73,8 +73,7 @@ This was written in python 2.x
   	I again turn to requests for this. IMDB will take API requests, and list all movies and release years for a given query.
   	I used regex to find every string in the following format: (dddd) (where d is [0-9].
   	Then return the first one in that list (the year of the closest match, latest year)
-  	This will also fail, because sometimes there are multiple releases of a given title, 
-  	or the search will return actors and movies.
+  	This will also fail, because sometimes there are multiple releases of a given title
 
 ##Conclusion
 
