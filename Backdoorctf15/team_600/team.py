@@ -67,3 +67,5 @@ for i in f:
 	flag += str(p32(int(i, 16)))
 
 print "[*] Flag: " + flag
+
+# RyanAiden
