@@ -23,7 +23,8 @@ This is all programmed in python 2.x
 	So then we had to print the text into the image.
 	We have to use a mono, unicode font in order to represent the qr code correctly.
 	I selected DejaVuSansMono since it was the first Google result.
-	Then simply loop through the qr array and print the lines 10 pts appart vertically (since I set the font size to 10)
+	Then simply loop through the qr array and print the lines 10 pts appart vertically
+	(since I set the font size to 10)
 	Then save the image.
 	Now we have an image of the qr code, we can use qrtools to read it in, and give us text
 	(yes, we are going from sockets->textQR->imageQR->OCRQR->QRvalue->flag)
