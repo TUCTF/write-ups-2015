@@ -41,4 +41,4 @@ Then we use socket.send to send the code back to the server which would then giv
 
 Eventually (I think after 20 or 50 ones) you will not get a qr code.
 Instead of a QR code, you get back
-~ Congratulations. Flag is [Redacted]
+	Congratulations. Flag is [Redacted]
