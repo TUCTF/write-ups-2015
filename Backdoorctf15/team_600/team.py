@@ -22,16 +22,14 @@ else:
 # that wasn't extrememly noticable, it took me a long time to realize
 # the flag was being dumped to the terminal. It was just in little endian
 # and hex. So copy the values from the output, reverse each byte,
-# convert to ascii and you've got the flag. By observing where your
-# local flag was located in the spit out garbage, you can see
-# about where it should be when performed on the server. 
+# convert to ascii and you've got the flag. 
 
-# By observing where your flag was located on the stack, you could see 
-# it was 10 addresses away. Therefore, using %10$x would cause the 10th 
-# value on the stack to be printed. We now can hardcode exactly where 
-# the flag will be. The flag is printed in hex, there are 256 bits in 
-# the flag (i.e. 32 bytes or 64 hex characters) so we will need to use 
-# 16 %x's.
+# By observing where your flag was located in the outputted data, you 
+# could the flag began 10 words from the begginning of the dump. 
+# Therefore, using %10$x would cause the 10th value on the stack to be 
+# printed. We now can hardcode exactly where the flag will be. The flag 
+# is printed in hex, there are 256 bits in the flag (i.e. 32 bytes or 64 
+# hex characters) so we will need to use 16 %x's. 
 
 teamname = "%10$x.%11$x.%12$x.%13$x.%14$x.%15$x.%16$x.%17$x.%18$x.%19$x.%20$x.%21$x.%22$x.%23$x.%24$x.%25$x"
 
