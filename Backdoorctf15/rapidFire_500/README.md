@@ -79,7 +79,7 @@ of questions are as follows:
 
 ##Conclusion
 
-Numbers 9 - 11 were where it got tricky. Solutions to questions 1 - 8 always work, 
+Numbers 9 - 11 were where it got tricky. Solutions to questions 1 - 8 were straightforward, 
 solutions 9 - 11 sometimes fail because of silly things 
 (like the Peoples Democratic Republic of Korea vs. North Korea, and Taiwan vs. China as examples).
 
