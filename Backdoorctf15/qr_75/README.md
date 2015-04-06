@@ -1,3 +1,6 @@
+# qr 75 points
+
+##Overview
 When you run
 ~ nc hack.bckdr.in 8010
 You will get back what looks to be a version 10 QR code
@@ -6,14 +9,14 @@ At this point there are a couple options to solve this.
 I chose a very inefficient route, but one that I believed would take the least effort on my end.
 This is all programmed in python 2.x
 
-#Netcat
+##Netcat
 	The url and port can be opened with the socket module.
 	Then you can use recv to get the qr code from the server.
 	Adding a timeout of 0.5 to the socket will let you know when the server is done sending the qr code.
 	You should really use select, but I was lazy.
 	Once you have the reply, the socket send command will send your message to the server.
 
-#Qr code:
+##Qr code:
 	This is where I went the long way around.
 	I split the qr code up to an array based on newlines
 	I then created a picture 800x800 using PIL
@@ -26,7 +29,7 @@ This is all programmed in python 2.x
 Again, complicated, but it worked. most of the time.
 Then we use socket.send to send the code back to the server which would then give us the next qr code.
 
-#Code Overview (psudo code):
+##Code Overview (psudo code):
 	Set up my Netcat class to connect to the server
 	While true:
 		get qr-text from server
