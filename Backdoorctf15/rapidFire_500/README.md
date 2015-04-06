@@ -26,6 +26,7 @@ By looking at the output, we see there are 11 different questions that can be as
 Since there were clear key words to distinguish each case, I simply looked for the phrase in the 
 question and called the appropriate method for it. The method for solving each of the 11 types 
 of questions are as follows:
+
 1. the n'th prime number:
   	the n's can be up to 1,000,000 so clearly we can't derive the prime list on the go.
   	I found the first 1,000,000 primes and read those into a list.
@@ -39,17 +40,17 @@ of questions are as follows:
   	The formula for the sum of the first n numbers is: ```(n*(n+1))/2```
 
 4. sum the first n odd natural numbers:
-  	Again, a formula gives us the answer: ```n**2```
+  	Again, a formula gives us the answer: ```n^2```
 
-5. find the n'th digit of PI
+5. find the n'th digit of PI:
   	since this asks for up to the 1,000,000'th digit, any sort of calculation will probably take too long. 
-  	There is a list of the first million digits of pi, I just read this in as an array and selected the index
+  	There is a list of the first million digits of pi, I just read this in as an array and selected the index.
   	As a note, the 0th digit is 3, the 1st digit is 1, and so on.
 
 6. find the n'th Fibonacci number:
   	There are some formulas for fib that are O(log(n)), but there is even a better solution. Find a list and import it.
 
-7. sum the first n Fibonacci numbers
+7. sum the first n Fibonacci numbers:
   	Again, here for i in... is not the answer. Since we already have a list of fibs, we can grab any number at cost O(1).
   	the sum of the first n is: ```fib(n+2) - 1```
   		As a note, since we have the list, python's sum will get you the result quick enough, but 
