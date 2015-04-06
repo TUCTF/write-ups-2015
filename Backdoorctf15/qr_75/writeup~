@@ -21,18 +21,18 @@ Qr code:
 	So then we had to print the text into the image.
 	We have to use a mono, unicode font in order to represent the qr code correctly.
 	I selected DejaVuSansMono since it was the first Google result.
-	Then simply loop through the qr array and print the lines 10 pts apart vertically (since I set the font size to 10)
+	Then simply loop through the qr array and print the lines 10 pts appart vertically (since I set the font size to 10)
 	Then save the image.
 	Now we have an image of the qr code, we can use qrtools to read it in, and give us text (yes, we are going from sockets->textQR->imageQR->OCRQR->QRvalue->flag)
 		Again, complicated, but it worked. most of the time.
 	Then we use socket.send to send the code back to the server which would then give us the next qr code.
 
-Code Overview (pseudo code):
+Code Overview (psudo code):
 	Set up my Netcat class to connect to the server
 	While true:
 		get qr-text from server
 		make it an image
-		analyze image with qrtools
+		analize image with qrtools
 		send result back to server
 
 Eventually (I think after 20 or 50 ones) you will not get a qr code.
