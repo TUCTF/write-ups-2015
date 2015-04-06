@@ -3,4 +3,5 @@
 * [qr](qr_75/)
 * [echo](echo_100/)
 * [forgot](forgot_200/)
+* [rapidfire](rapidfire_500/)
 * [team](team_600/)
