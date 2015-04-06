@@ -21,7 +21,24 @@ is printed in hex, there are 256 bits in the flag (i.e. 32 bytes or 64
 hex characters) so we will need to use 16 %x's. 
 
 ##Code
-We construct a teamname that will display the 16 words off the stack
+Import pwn tools, set the context appropriately and connect to 
+the remote service. If this is being run on a linux computer, 
+it will work locally if in the same directory as the team
+executable. Pwn tools will run the process and attach it to 
+a port, simulating the contest environment quite nicely.
+```python
+from pwn import *
+context(arch='i386', os='linux')
+
+# Challenge originally hosted at hack.bckdr.in 8004
+if 'HOST' in args:
+    r = remote(args['HOST'], int(args['PORT']))
+else:
+    l = listen(0)
+    l.spawn_process(['./team'])
+    r = remote('localhost', l.lport)
+```
+Next we construct a teamname that will display the 16 words off the stack
 that contain the flag. We send this as the teamname and can then 
 send anything as the flag.
 ```python
