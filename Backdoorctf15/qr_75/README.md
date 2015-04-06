@@ -6,15 +6,14 @@ At this point there are a couple options to solve this.
 I chose a very inefficient route, but one that I believed would take the least effort on my end.
 This is all programmed in python 2.x
 
-Netcat:
-	The url and port can be opened with the socket module
-	
-	Then you can use recv to get the qr code from the server
+#Netcat
+	The url and port can be opened with the socket module.
+	Then you can use recv to get the qr code from the server.
 	Adding a timeout of 0.5 to the socket will let you know when the server is done sending the qr code.
-		You should really use select, but I was lazy.
+	You should really use select, but I was lazy.
 	Once you have the reply, the socket send command will send your message to the server.
 
-Qr code:
+#Qr code:
 	This is where I went the long way around.
 	I split the qr code up to an array based on newlines
 	I then created a picture 800x800 using PIL
@@ -24,10 +23,10 @@ Qr code:
 	Then simply loop through the qr array and print the lines 10 pts appart vertically (since I set the font size to 10)
 	Then save the image.
 	Now we have an image of the qr code, we can use qrtools to read it in, and give us text (yes, we are going from sockets->textQR->imageQR->OCRQR->QRvalue->flag)
-		Again, complicated, but it worked. most of the time.
-	Then we use socket.send to send the code back to the server which would then give us the next qr code.
+Again, complicated, but it worked. most of the time.
+Then we use socket.send to send the code back to the server which would then give us the next qr code.
 
-Code Overview (psudo code):
+#Code Overview (psudo code):
 	Set up my Netcat class to connect to the server
 	While true:
 		get qr-text from server
