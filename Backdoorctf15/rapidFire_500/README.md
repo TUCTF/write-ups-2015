@@ -7,17 +7,18 @@ so manual net-catting is out.
 You also have to answer the questions consecutively, any wrong answer kill your 
 session and you have to start from the beginning.
 By looking at the output, we see there are 11 different questions that can be asked, they are:
-	1. the n'th prime number
-	2. convert a base 10 number to binary
-	3. sum the first n natural numbers (1,2,...)
-	4. sum the first n odd natural numbers
-	5. find the n'th digit of PI
-	6. find the n'th Fibonacci number
-	7. sum the first n Fibonacci numbers
-	8. find the md5 hash of a given number
-	9. find the name of a country for a given city
-	10. find the 2 digit country code of a country
-	11. find the release year of a given movie
+
+1. the n'th prime number
+2. convert a base 10 number to binary
+3. sum the first n natural numbers (1,2,...)
+4. sum the first n odd natural numbers
+5. find the n'th digit of PI
+6. find the n'th Fibonacci number
+7. sum the first n Fibonacci numbers
+8. find the md5 hash of a given number
+9. find the name of a country for a given city
+10. find the 2 digit country code of a country
+11. find the release year of a given movie
 
 ##Solution
 Since there were clear key words to distinguish each case, I simply looked for the phrase in the 
@@ -56,9 +57,6 @@ This was written in python 2.x
 8. find the md5 has of a given number:
   	haslib has a md5 digest.
 
-Now is when it gets tricky. The above always work, the methods below sometimes fail because of silly things
-(like the Peoples Democratic Republic of Korea vs. North Korea, and Taiwan vs. China as examples)
-
 9. find the name of a country for a given city:
   	I was inspired by this project for this one https://github.com/ctfs/write-ups-2015/tree/master/0ctf-2015/misc/geo-newbie
   	The idea is to use requests to search a website for a given city and select out the first country and return that value.
@@ -79,9 +77,17 @@ Now is when it gets tricky. The above always work, the methods below sometimes f
   	or the search will return actors and movies.
 
 ##Conclusion
+
+Numbers 9 - 11 were where it got tricky. Solutions to questions 1 - 8 always work, 
+solutions 9 - 11 sometimes fail because of silly things 
+(like the Peoples Democratic Republic of Korea vs. North Korea, and Taiwan vs. China as examples).
+
 So after 200 question (really 199), you get:
 flag:[redacted]
 instead of a question.
 
 As a general note, don't look at the code for the best programming practices.
 This is written quick and dirty and then cleaned up a little for readability after it worked.
+```
+gb1035
+```
