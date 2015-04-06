@@ -65,7 +65,7 @@ endianness. We can use pwntools' p32() here
 to get the flag values. 
 We could optionally 
 hex decode the string and then invert it like
-so: ```python flag += str(i.decode("hex")[::-1])```
+so: ```flag += str(i.decode("hex")[::-1])```
 but I like pwntools so we'll use that.
 ```python
 flag = ""
