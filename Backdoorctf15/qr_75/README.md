@@ -25,7 +25,8 @@ This is all programmed in python 2.x
 	I selected DejaVuSansMono since it was the first Google result.
 	Then simply loop through the qr array and print the lines 10 pts appart vertically (since I set the font size to 10)
 	Then save the image.
-	Now we have an image of the qr code, we can use qrtools to read it in, and give us text (yes, we are going from sockets->textQR->imageQR->OCRQR->QRvalue->flag)
+	Now we have an image of the qr code, we can use qrtools to read it in, and give us text
+	(yes, we are going from sockets->textQR->imageQR->OCRQR->QRvalue->flag)
 Again, complicated, but it worked. most of the time.
 Then we use socket.send to send the code back to the server which would then give us the next qr code.
 
