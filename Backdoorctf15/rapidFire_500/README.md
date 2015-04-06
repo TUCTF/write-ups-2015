@@ -3,9 +3,11 @@
 ##Overview
 This challenge was to solve a variety of questions in rapid succession.
 You only have about 1 or 2 seconds to give the answer for each question, 
-so manual net-catting is out.
-You also have to answer the questions consecutively, any wrong answer kill your 
-session and you have to start from the beginning.
+so manual answering is out.
+You also have to answer the questions consecutively, any wrong answer will kill 
+your session and you have to start from the beginning.
+
+##Observations
 By looking at the output, we see there are 11 different questions that can be asked, they are:
 
 1. the n'th prime number
@@ -22,9 +24,8 @@ By looking at the output, we see there are 11 different questions that can be as
 
 ##Solution
 Since there were clear key words to distinguish each case, I simply looked for the phrase in the 
-question and called the appropriate method for it.
-This was written in python 2.x
-
+question and called the appropriate method for it. The method for solving each of the 11 types 
+of questions are as follows:
 1. the n'th prime number:
   	the n's can be up to 1,000,000 so clearly we can't derive the prime list on the go.
   	I found the first 1,000,000 primes and read those into a list.
