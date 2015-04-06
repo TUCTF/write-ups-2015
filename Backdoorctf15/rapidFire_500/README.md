@@ -9,6 +9,7 @@ your session and you have to start from the beginning.
 
 ##Observations
 By looking at the output, we see there are 11 different questions that can be asked, they are:
+
 1. the n'th prime number
 2. convert a base 10 number to binary
 3. sum the first n natural numbers (1,2,...)
