@@ -1,0 +1,32 @@
+# team 600pts solution
+
+To start, disassembling the program reveals a format string
+vulnerability when it prints the team name.
+After much trial and error and not doing anything right at all,
+I noticed that using many %x.%x.%x.%x.....%x would essentially 
+dump the stack for you. Because I had a poor flag locally,
+(a flag.txt file is needed in the same directory to do this chal)
+that wasn't extrememly noticable, it took me a long time to realize
+the flag was being dumped to the terminal the entire time. It was just in little endian
+and hex. So copy the values from the output, reverse each byte,
+convert to ascii and you've got the flag. By observing where your
+local flag was located in the spit out garbage, you can see
+about where it should be when performed on the server.
+
+For team name enter: %x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x
+
+This was the result of the flag dumped to the terminal
+35663364.64363031.37653139.32346137.38356562.63613530. ... .62663137.8048300
+
+After reversing the bytes. (Could have been much easier using python, will implement a solution in python when I can).
+
+64336635 31303664 ... 37316662 
+
+After removing spaces. 
+6433663531303664 ... 37316662 
+
+
+Converted to ascii
+[Redacted]
+
+# RyanAiden
