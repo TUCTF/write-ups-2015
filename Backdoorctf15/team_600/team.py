@@ -20,9 +20,10 @@ else:
 # dump the stack for you. Because I had a poor flag locally,
 # (a flag.txt file is needed in the same directory to do this chal)
 # that wasn't extrememly noticable, it took me a long time to realize
-# the flag was being dumped to the terminal. It was just in little endian
-# and hex. So copy the values from the output, reverse each byte,
-# convert to ascii and you've got the flag. 
+# the flag was being dumped to the terminal. It was just in little/big 
+# endian (don't remember which is which) and hex. So copy the values 
+# from the output, reverse each byte, convert to ascii and you've got 
+# the flag. 
 
 # By observing where your flag was located in the outputted data, you 
 # could the flag began 10 words from the begginning of the dump. 
