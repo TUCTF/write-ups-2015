@@ -25,7 +25,10 @@ need to use 16 %x's to grab the entire flag.
 Import pwn tools, set the context appropriately and connect to 
 the remote service. If this is being run on a linux computer, 
 it will work locally if in the same directory as the team
-executable. Note there also needs to be a flag file locally. 
+executable. Note there also needs to be a ```flag.txt``` file locally. 
+Speaking from personal experience and wasted hours, make the contents 
+of this flag noticable if it happens to be dumped in the middle of the 
+stack.
 Pwn tools will run the process and attach it to a port, 
 simulating the contest environment quite nicely.
 ```python
