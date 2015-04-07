@@ -43,7 +43,7 @@ For this, we use PIL to write text to an image.
 	draw  =  ImageDraw.Draw ( im )
 	unicode_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", font_size)	#font_size=10
 	vPos=0
-	for unicode_text in text:
+	for unicode_text in data:
 		draw.text ( (10,vPos), unicode_text.decode('utf-8'), fill=font_color, font=unicode_font )	#font_color=(0,0,0)
 		vPos+=10	#font size of 10, so 10 between characters vertically
 	im.save("test.png")
