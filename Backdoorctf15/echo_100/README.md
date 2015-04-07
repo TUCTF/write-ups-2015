@@ -25,8 +25,8 @@ and it will pack everything and even generate shellcode
 (not used here) that will work on that machine. No more
 worrying about endianess or 64 bit vs 32 bit or compiling
 custom shellcode.
-Installation of pwntools is a simple pip install pwntools.
-This should work even when they take servers down. There will
+Installation of pwntools is a simple ```pip install pwntools```.
+This code should work even when they take servers down. There will
 need to be a local file called flag.txt, and pwntools will 
 attach your process of echo to a local port to simulate a 
 remote exploit.
