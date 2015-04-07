@@ -14,18 +14,20 @@ from the output, reverse each byte, convert to ascii and you've got
 the flag. 
 
 By observing where your flag was located in the outputted data, you 
-could the flag began 10 words from the begginning of the dump. 
+could see the flag began 10 words from the beginning of the dump. 
 Therefore, using %10$x would cause the 10th value on the stack to be 
-printed. We now can hardcode exactly where the flag will be. The flag 
-is printed in hex, there are 256 bits in the flag (i.e. 32 bytes or 64 
-hex characters) so we will need to use 16 %x's. 
+printed or the first word of the flag. We now can hardcode exactly 
+where the flag will be. The flag is printed in hex, there are 256 
+bits in the flag (i.e. 32 bytes or 64 hex characters) so we will 
+need to use 16 %x's to grab the entire flag. 
 
 ##Code
 Import pwn tools, set the context appropriately and connect to 
 the remote service. If this is being run on a linux computer, 
 it will work locally if in the same directory as the team
-executable. Pwn tools will run the process and attach it to 
-a port, simulating the contest environment quite nicely.
+executable. Note there also needs to be a flag file locally. 
+Pwn tools will run the process and attach it to a port, 
+simulating the contest environment quite nicely.
 ```python
 from pwn import *
 context(arch='i386', os='linux')
