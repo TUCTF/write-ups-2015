@@ -59,7 +59,7 @@ This will print the data for the QR code. Now we just need to send it back to th
 	self.r.send(qr.data)
 The server will then give back another qr code to decode
 
-Eventually after 100, you will not get a qr code.
-Instead of a QR code, you get back
+after 100 successful answers, you will not get a qr code,
+instead you get back
 
 	Congratulations. Flag is [Redacted]

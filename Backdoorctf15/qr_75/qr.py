@@ -13,6 +13,8 @@ import subprocess
 import time
 import socket
 import select
+from pwn import *
+
 class imageHelper():
 	def __init__(self):
 		self.net = Netcat('hack.bckdr.in',8010)
@@ -27,11 +29,9 @@ class imageHelper():
 			qr = qrtools.QR()
 			qr.decode("test.png")
 			print qr.data				#Prints the value of the code
-			s = self.getSum(qr.data)	#Prints the sha256sum to the concol in case we need it.
 			self.net.send(qr.data+'\n')	#Send back the data from the code.
 			cnt+=1
 			print 'count: ',cnt
-	#		print cnt
 	def saveImage(self,text):
 		'''Takes text from the code and saves it as an image.'''
 		from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -54,52 +54,35 @@ class imageHelper():
 			vPos+=10	#font size of 10, so 10 between characters vertically
 
 		im.save("test.png")
-
-	def getSum(self,text):
-		'''Generates the sha256sum of the text'''
-		from Crypto.Hash import SHA256
-		h = SHA256.new();
-		h.update(text);
-		print h.hexdigest()
-
-		return h.hexdigest()
+		sleep(0.01)
 
 class Netcat:
-	'''This is a basic socket interface I wrote on the fly. It is not the best, but it works.'''
+	'''This is a basic socket interface using pwntools remote.'''
 	def __init__(self, hostname, port):
 		self.hostname = hostname
 		self.port = port
-
-		self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		self.socket.connect((self.hostname, self.port))
-		#Need percistant connection, if you connect and disconnect every time, you won't get the flag.
+		self.r = remote(self.hostname, self.port)
 	def read(self):
 		'''Reads the qr code from the server'''
-		qrCode=''
-		self.socket.settimeout(0.5)	#I needed to set this since I was too lazy to look up select. 0.5 seemed to be the best timeout
+		data=''
 		print 'getting new one'
-		while 1:
-			time.sleep(0.02)	#Again, without this I was getting weird problems with recieving full codes. This smoothed everything out.
+		nc = 0
+		while self.r.can_recv(timeout = 0.35):	#The qr code is bigger than the default buffer size, so we loop until it sent.
 			try:
-				data = self.socket.recv(1024)	#timeout causes an exception, so it needs to be caught and in this case end the message
+				data += self.r.recv(timeout=0.1)
 			except:
-				break
-			#Below are my previous attempts to find the end of a message. If they fail, the timeout will solve it.
-			if '\n                                                                                              \n' in data:
-				qrCode+=data	#Make sure you add this to the total, as it is part of the message
-				break
-			if len(data) < 500:
-				print data
-			if len(data) < 4:
-				break
-			qrCode+=data
+				pass
+		if 'flag:' in data:	#We did it!
+			with open('flag','w+') as flg:
+				flg.write(data)
 		print '------------------------------------------'	#Prints it so you have some output to look at...
-		print qrCode
+		print data
 		print '------------------------------------------'
-		return qrCode
+		return data
 	def send(self,content):
 		'''simple method to send data back to the server.'''
-		self.socket.sendall(content)
+		print 'sending: ',content
+		self.r.send(content)
 
 if __name__ == '__main__':
 	im = imageHelper()
