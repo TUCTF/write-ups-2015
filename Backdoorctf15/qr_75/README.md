@@ -33,7 +33,7 @@ Then we can grab the qr code:
 	data=''
 	while self.r.can_recv(timeout = 0.35):
 		try:
-			data += self.r.recv(timeout=0.35)
+			data += self.r.recv(timeout=0.01)
 		except:
 			pass
 Now we have the data (unicode text), we need to make it an image.\n
