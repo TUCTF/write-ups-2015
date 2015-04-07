@@ -18,6 +18,7 @@ class imageHelper():
 		self.net = Netcat('hack.bckdr.in',8010)
 	def main(self):
 		'''Concept is simple. connect to the server, get the QR code, read it and send the value back to the server for the next code.'''
+		cnt = 0
 		while 1:
 			time.sleep(0.1)	#In case the server needed a second to breath. I was getting partial messages, so I threw this in.
 			rawMsg = self.net.read()	#Read the code
@@ -28,6 +29,9 @@ class imageHelper():
 			print qr.data				#Prints the value of the code
 			s = self.getSum(qr.data)	#Prints the sha256sum to the concol in case we need it.
 			self.net.send(qr.data+'\n')	#Send back the data from the code.
+			cnt+=1
+			print 'count: ',cnt
+	#		print cnt
 	def saveImage(self,text):
 		'''Takes text from the code and saves it as an image.'''
 		from PIL import Image, ImageDraw, ImageFont, ImageFilter
