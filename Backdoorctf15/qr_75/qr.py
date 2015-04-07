@@ -5,7 +5,7 @@
 	# In this code exits automatically (via exceptions, but hey it still exits).
 	# This code also is not 100% accurate. It may take several runs of it to get the flag.
 
-
+		
 
 import os
 import qrtools
