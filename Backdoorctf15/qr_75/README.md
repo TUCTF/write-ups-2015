@@ -36,6 +36,7 @@ Use pwntools remote to connect to the server
 	
 	self.r = remote(hostname, port)
 Then we can grab the qr code:
+
 	#get qr-text from server
 	data=''
 	while self.r.can_recv(timeout = 0.35):
