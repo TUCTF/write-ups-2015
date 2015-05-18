@@ -22,15 +22,38 @@ Python code:
 ```
 import md5
 
-# finish code here (get that file from my VM)
+hex_input = raw_input("Please input the string: ").decode('utf-8')
+print hex_input
+end_bits = '0'*15
+
+r = 0
+flag = True
+while flag:
+	hex_data = md5.new(hex_input + str(r)).hexdigest()
+	print hex_data
+	scale = 16 
+
+	num_of_bits = len(hex_data) * 4
+
+	binary_data = bin(int(hex_data, scale))
+
+	if binary_data.endswith(end_bits):
+		print "r of length " + str(r)  " succeeded!"
+		flag = False
+	else:
+		print "tried r of length " + str(r) + ". No success "
+		r += 1
 ```
+
+I wrote this code up before realizing that "proof-of-concept r" did the exact same thing, but it was useful in verifying what I thought the box did.
+
+There was a sign in button at the bottom of the page, but clicking it results in an error. In order to log in we need to make some hidden form fields visible.
 
 ## Uncovering hidden form fields
 If we look at the code for the form, we realize that inside the <form> ... </form> block there are some fields 
 with type="hidden" as an attribute. Getting rid of the hidden tags reveals extra options, including a field 
-labeled *nonce* with a string already in it. I don't exactly remember what I did here, but I think this will reveal a 
-place to put in a value for the *nonce*. I think I just used the one given to me in the clue. You can then click the 
-Sign in button below and get in.
+labeled *nonce* with a string already in it. I don't exactly remember what I did here, but I think this revealed a 
+place to put in a value for the *nonce*. I think I just used the one given to me in the clue. I think there was a field for "r", which you can calculate using the proof of concept field or the python script you created. You can then click the Sign in button below and get in without an error.
 
 *note: I'll work on getting the actual html from the web app. The site is currently down and I'm not 
 sure if they will put it back up. I might have it downloaded though*
