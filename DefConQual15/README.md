@@ -1,1 +1,2 @@
-place holder
+#Completed Write-ups 
+ * [mathwiz](mathwiz/)
