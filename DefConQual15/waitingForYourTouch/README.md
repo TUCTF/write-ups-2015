@@ -65,4 +65,31 @@ The hints seem to indicate that we must create, or at least modify, users. Since
 
 There is a button on the page that says **click**. Although we don't know this yet, clicking the button will yield the flag. Unfortunately, the button is disabled. You can enable it by removing the button's *disabled* field in the HTML, but if you try to click it, an error results. I think it may have said something about being too young, but I'm not sure.
 
-There is a toolbar at the top of the application, with links to *high scores*, *edit user*, and *log out*. *High scores* didn't prove to be all that useful. May have just been a place to showcase all the user accounts "created" or something. I didn't look too far into it. *Edit user* is where the magic happens.
+There is a toolbar at the top of the application, with links to **high scores**, **edit user**, and **log out**. **High scores** didn't prove to be all that useful. May have just been a place to showcase all the user accounts "created" or something. I didn't look too far into it. **Edit user** is where the magic happens.
+
+
+## The Edit User tab
+
+At first glance all that we can see is **Name** and ""Proof-of-work r", just as before. But inspecting the HTML reveals some commented out code that lets you change the "Created at" date.
+
+```html
+<!--
+<p>
+<label for="user_created_at">Created at</label>
+<input disabled="disabled" type="text" value="2015-05-17 19:15:09 +0000" name="user[created_at]" id="user_created_at" />
+</p>
+-->
+```
+
+Simply remove the `<!--` and `-->`, as well as the disabled field, and you can modify your user's creation date. Just set it to something really high and then go back to the main page, and ...
+
+
+
+
+
+
+
+
+
+
+
