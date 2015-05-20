@@ -4,7 +4,7 @@ web page and making them visible, along with interpreting hints that the web app
 
 I should note that as I solved the challenge I didn't keep a whole lot of info that may have helped with documentation. I'm kind of going off of memory here, so it may not be *entirely* accurate, but it is accurate to the best of my knowledge.
 
-## A First look
+# A First look
 The challenge asks you to visit http://waiting-for-your-touch.quals.shallweplayaga.me/. 
 You are given a username and password to access the site (it changed during the competition due to technical 
 difficulties with the server's web sockets). Once you log in, you are presented with two text boxes, one with 
@@ -48,13 +48,13 @@ I wrote this code up before realizing that "proof-of-concept r" did the exact sa
 
 There was a sign in button at the bottom of the page, but clicking it results in an error. In order to log in we need to make some hidden form fields visible.
 
-## Uncovering hidden form fields
+# Uncovering hidden form fields
 If we look at the code for the form, we realize that inside the `<form> ... </form>` block there are some fields 
 with type="hidden" as an attribute. Getting rid of the hidden tags reveals extra options, including a field 
 labeled *nonce* with a string already in it. I don't exactly remember what I did here, but I think this revealed a 
 place to put in a value for the *nonce*. I think I just used the one given to me in the clue. I think there was a field for "r", which you can calculate using the proof of concept field or the python script you created. You can then click the Sign in button below and get in without an error.
 
-## Inside the application
+# Inside the application
 The application now says you are logged in with a username that matches the nonce field from the previous page. There is a message in bold that says
 
 > The button is *not* waiting for your touch
@@ -68,7 +68,7 @@ There is a button on the page that says **click**. Although we don't know this y
 There is a toolbar at the top of the application, with links to **high scores**, **edit user**, and **log out**. **High scores** didn't prove to be all that useful. May have just been a place to showcase all the user accounts "created" or something. I didn't look too far into it. **Edit user** is where the magic happens.
 
 
-## The Edit User tab
+# The Edit User tab
 
 At first glance all that we can see is **Name** and ""Proof-of-work r", just as before. But inspecting the HTML reveals some commented out code that lets you change the "Created at" date.
 
@@ -81,7 +81,9 @@ At first glance all that we can see is **Name** and ""Proof-of-work r", just as 
 -->
 ```
 
-Simply remove the `<!--` and `-->`, as well as the disabled field, and you can modify your user's creation date. Just set it to something really high and then go back to the main page, and ...
+Simply remove the `<!--` and `-->`, as well as the disabled field, and you can modify your user's creation date. Just set it to something really high.
+
+After the date is changed, simply go back to the main menu, enable the button, and click it, and you get the flag.
 
 
 
