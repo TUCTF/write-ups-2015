@@ -1,15 +1,23 @@
 ##Baby's first: babycmd
 
-###Overview
+##Overview
 We are given the hostname and port ```babycmd3ad...00b.quals.shallweplayaga.me:15491``` 
-as well as a program binary. First things first we download the binary and run file. 
+as well as a program binary. This is a more indepth write up aimed at displaying the 
+method used to identify the problem and then go about exploiting it. The main individuals 
+that contributed to this solution were RyanAiden, Captain RedBeard, 1cyFl4m3 and the most 
+progress came from darkstructures.
+
+##Methology
+First things first, we need to download the given binary program and determine what 
+it is. 
 
 ```
 $ file babycmd 
 babycmd: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, stripped
 ```
 
-Running the program let's us see the program accepts arguments to the commands ping, dig and host.
+Now we know we are dealing with a 64-bit executable. To run the program we must first give it executable right.
+```chmod +x babycmd*```. Now running the program let's us see the program accepts arguments to the commands ping, dig and host.
 ```
 $ ./babycmd 
 
@@ -49,6 +57,28 @@ Commands: ping, dig, host, exit
 Goodbye
 ```
 
-The commands seem to be executed through their respective programs so this leads us to think this 
+The commands seem to be executed through their respective programs on the machine, so this leads us to think this 
 could be a command injection challenge. The goal would be to execute our own commands instead of 
-ping, dig, and host.
+ping, dig, and host. Using a disassembler we can get a better idea of what is going on. The disassembled 
+code shows the strings being used to execute the respective commands. The host command uses a different format 
+than the other two commands. Host is executed via ```\"%s\"``` rather than just ```%s``` like the others. Excellent. 
+The double quotes can be escaped which would enable us to be able to 
+inject commands in the form of ``` host "command here" ``` . Trying this in our program tells us 
+we entered an invalid hostname. Further digging in the disassembled code reveals some basic checking 
+is done on the hostname parameter. To pass the checking, the hostname cannot contain certain characters. 
+Using ``` host aa"(command)"aa ``` will pass verification and allow us to inject commands. 
+
+Attempting basic commands such as ``` host aa"ls"aa ``` would not provide any results back and 
+``` host aa"ls /"aa ``` would have the spaces stripped out of it. We needed a command with no 
+spaces that would grants us access to the machine. After more time than necessary we tried 
+``` host ww"$(/bin/bash)aa ``` which popped us into a bash shell locally so we thought we 
+had it. Trying this on the remote host gave a slightly different result. Executing standard commands 
+would not return any results but trying ``` cat flag ``` returned the standard error for file 
+not found. One of us noticed it was only returning the results of stderr. Great. We can just 
+pipe the results of all of our commands from stdout to stderr. After a quick google we found 
+this was done by using ```1>&2```. We simply appended this to our previous attempts and we 
+were at a standard shell. After digging we found the flag in the home directory of the user 
+babycmd. We read the flag with ``` cat /home/babycmd/flag 1>&2 ```.
+
+The flag was ``` Pretty easy eh!!~ Now let's try something h4rd3r, shallwe?? ```
+
