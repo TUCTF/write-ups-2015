@@ -4,11 +4,14 @@
 We are given the hostname and port ```babycmd3ad...00b.quals.shallweplayaga.me:15491``` 
 as well as a program binary. First things first we download the binary and run file. 
 
-```$ file babycmd 
-babycmd: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, stripped```
+```
+$ file babycmd 
+babycmd: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, stripped
+```
 
 Running the program let's us see the program accepts arguments to the commands ping, dig and host.
-```$ ./babycmd 
+```
+$ ./babycmd 
 
 Welcome to another Baby's First Challenge!
 Commands: ping, dig, host, exit
