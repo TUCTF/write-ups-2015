@@ -61,8 +61,8 @@ The commands seem to be executed through their respective programs on the machin
 could be a command injection challenge. The goal would be to execute our own commands instead of 
 ping, dig, and host. Using a disassembler we can get a better idea of what is going on. The disassembled 
 code shows the strings being used to execute the respective commands. The host command uses a different format 
-than the other two commands. Host is executed via ```\"%s\"``` rather than just ```%s``` like the others. Excellent. 
-The double quotes can be escaped which would enable us to be able to 
+than the other two commands. Host is executed via ```host \"%s\"``` rather than just ```host %s``` like the others. 
+Excellent, the double quotes can be escaped which would enable us to be able to 
 inject commands in the form of ``` host "command here" ``` . Trying this in our program tells us 
 we entered an invalid hostname. Further digging in the disassembled code reveals some basic checking 
 is done on the hostname parameter. To pass the checking, the hostname cannot contain certain characters. 
