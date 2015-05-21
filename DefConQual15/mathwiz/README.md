@@ -1,4 +1,4 @@
-##Baby's first mathwiz
+##Baby's first: mathwiz
 
 ###Overview
 We are given the hostname and port ```mathwhiz_c951d46fed68687ad93a84e702800b7a.quals.shallweplayaga.me:21249```. 
