@@ -43,7 +43,8 @@ Commands: ping, dig, host, exit
 Host host not found: 3(NXDOMAIN)
 Commands: ping, dig, host, exit
 : exit
-Goodbye```
+Goodbye
+```
 
 The commands seem to be executed through their respective programs so this leads us to think this 
 could be a command injection challenge. The goal would be to execute our own commands instead of 
