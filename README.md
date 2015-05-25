@@ -1,7 +1,7 @@
 # Write-Ups-2015
 This is a repository for TU's CTF team write-ups
 
-## Question Categories
+## Solution Categories
 
 ### Cryptography
 
@@ -22,12 +22,12 @@ This is a repository for TU's CTF team write-ups
 
 
 ### Web
-* [waitingForYourTouch](DefConQual15/waitingForYourTouch/)
+* [waitingForYourTouch](DefConQual15/waitingForYourTouch/) - Uncovering hidden HTML elements
 
 ### Programming
-* [rapidfire](Backdoorctf15/rapidFire_500/)
-* [qr](Backdoorctf15/qr_75/)
-* [mathwiz](DefConQual15/mathwiz/)
+* [rapidfire](Backdoorctf15/rapidFire_500/) - Answering given question
+* [qr](Backdoorctf15/qr_75/) - Decoding QR codes
+* [mathwiz](DefConQual15/mathwiz/) - Solving given math problems
 
 
 
