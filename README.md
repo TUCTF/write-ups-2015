@@ -25,9 +25,9 @@ This is a repository for TU's CTF team write-ups
 * [waitingForYourTouch](DefConQual15/waitingForYourTouch/) - Uncovering hidden HTML elements
 
 ### Programming
-* [rapidfire](Backdoorctf15/rapidFire_500/) - Answering given question
+* [rapidfire](Backdoorctf15/rapidFire_500/) - Answering different questions
 * [qr](Backdoorctf15/qr_75/) - Decoding QR codes
-* [mathwiz](DefConQual15/mathwiz/) - Solving given math problems
+* [mathwiz](DefConQual15/mathwiz/) - Solving math problems
 
 
 
