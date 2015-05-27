@@ -4,9 +4,9 @@
 If you aren't interested in the long answer to the question of "How does one solve this problem?", 
 the short answer is that improper sanitization of the argument to the host commad allowed the 
 inclusion of unnecessary characters and the usage of ```host \"%s\"``` allowed us to escape the 
-first paren and achieve command execution. The specific payload we used was something to the effect 
-of ```host ww."$(/bin/bash)"www```, which gave a shell. The final step was simply directing 
-standard output to standard error.
+first quote and achieve command execution. The specific payload we used was something to the effect 
+of ```host ww"$(/bin/bash)"aa```, which executed ```/bin/bash``` and gave a shell. The final step 
+was simply directing standard output to standard error.
 
 ##Overview
 For those who wish to learn more about what was described above, this is a more indepth 
