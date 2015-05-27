@@ -27,7 +27,8 @@ while (True):
 r.close()
 ```
 Unfortunately after several rounds the script was erroring out. The format of the question 
-was being changed to include '[]' inplace of parentheses. Making this modification would 
+was being changed to include '[]' inplace of parentheses. To fix this, I simply replaced 
+'[]' with their corressponding parentheses. Making this modification would 
 work for a few more rounds and then a new error would occur. Same issue, '{}' instead of 
 parenthese. After this fix '^' was being used to represent exponentiation so I replaced 
 all '^' with '**'. The next trick was the usage of words to represent numbers. Doing a lookup 
