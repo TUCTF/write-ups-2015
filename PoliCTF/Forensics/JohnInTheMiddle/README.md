@@ -18,7 +18,7 @@ analyzer. It allows you to either analyze traffic in real time or to open saved 
 There are rare occasions where pcap files contain information other than network traffic such as mouse movements, but 
 we won’t go into that right now.
 
-So, we load Wireshark and open the john-in-the-middle.pcap file. As expected, we are greeted with network traffic. 
+So, we load Wireshark and open the [john-in-the-middle.pcap](john-in-the-middle.pcap) file. As expected, we are greeted with network traffic. 
 Thankfully, this pcap is not very large. In most cases, pcap files used in challenges will be extremely large.
 
 The first step I always perform is to do a search for the word “flag” just in case the flag is in the traffic in plain 
@@ -44,7 +44,7 @@ those things, but there were quite a few pictures.
 My next thought was that steganography is used quite a bit in CTFs, so let us check out the pictures. For the uninitiated, 
 steganography is the act or art of hiding data, text, or other files inside pictures. There are many ways of doing this, 
 like hiding it in the hex of the picture, or performing some editing magic to hide text directly in the picture. In order 
-to check for the latter of the two, we regularly use StegSolve. 
+to check for the latter of the two, we regularly use [StegSolve](https://www.wechall.net/de/forum/show/thread/527/Stegsolve_1.3/). 
 
 To open StegSolve, I use terminal:
 
