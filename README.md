@@ -11,15 +11,16 @@ This is a repository for TU's CTF team write-ups
 * [forgot](Backdoorctf15/forgot_200/) - Buffer Overflow
 * [echo](Backdoorctf15/echo_100/) - Buffer Overflow
 * [babycmd](DefConQual15/babycmd/) - Command Injection
+* [HanoiAsAService](PoliCTF/Pwn/HanoiAsAService/) - Command Injection
 
 ### Forensics
-
+* [JohnInTheMiddle](PoliCTF/Forensics/JohnInTheMiddle/) - Object Export
 
 ### Reverse Engineering
 
 
 ### Steganography
-
+* [JohnInTheMiddle](PoliCTF/Forensics/JohnInTheMiddle/) - Hidden Text
 
 ### Web
 * [waitingForYourTouch](DefConQual15/waitingForYourTouch/) - Uncovering hidden HTML elements
