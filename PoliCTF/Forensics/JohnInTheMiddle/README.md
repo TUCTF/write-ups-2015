@@ -18,7 +18,7 @@ analyzer. It allows you to either analyze traffic in real time or to open saved 
 There are rare occasions where pcap files contain information other than network traffic such as mouse movements, but 
 we won’t go into that right now.
 
-So, we load Wireshark and open the [john-in-the-middle.pcap](john-in-the-middle.pcap) file. As expected, we are greeted with network traffic. 
+So, we load Wireshark and open the [john-in-the-middle.pcap](john-in-the-middle.pcap?raw=true) file. As expected, we are greeted with network traffic. 
 Thankfully, this pcap is not very large. In most cases, pcap files used in challenges will be extremely large.
 
 The first step I always perform is to do a search for the word “flag” just in case the flag is in the traffic in plain 
