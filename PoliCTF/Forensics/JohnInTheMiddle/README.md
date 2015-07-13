@@ -1,3 +1,4 @@
+## John In The Middle 100 points
 PoliCTF 2015
 JOHN IN THE MIDDLE
 100 Points - SOLVED
@@ -5,13 +6,14 @@ Can John hijack your surfin'? :)
 GPG key: GhairfAvvewvukDetolicDer-OcNayd#
 Download
 
-
+## Challenge Overview
 The task “JOHN IN THE MIDDLE” was a forensics challenge. As was the case with many of the other challenges, you were 
 required to download the gpg file, decrypt it with the given gpg key, append the file type .tar.gz and untar it. Once 
 this is accomplished, you are left with a pcap file which makes sense with the above clue: 
 
                                         “Can John hijack your surfin'? :)”.
 
+## Challenge Solution
 The first step with a pcap file is to load it into [Wireshark](https://www.wireshark.org/download.html). If you have any experience with CTFs you are familiar 
 with Wireshark, but on the off chance you are completely new to the scene, Wireshark is primarily a network traffic 
 analyzer. It allows you to either analyze traffic in real time or to open saved packet capture files (pcap files). 
