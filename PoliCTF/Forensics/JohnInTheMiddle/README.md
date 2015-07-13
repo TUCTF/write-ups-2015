@@ -12,7 +12,7 @@ this is accomplished, you are left with a pcap file which makes sense with the a
 
                                         “Can John hijack your surfin'? :)”.
 
-The first step with a pcap file is to load it into Wireshark. If you have any experience with CTFs you are familiar 
+The first step with a pcap file is to load it into [Wireshark](https://www.wireshark.org/download.html). If you have any experience with CTFs you are familiar 
 with Wireshark, but on the off chance you are completely new to the scene, Wireshark is primarily a network traffic 
 analyzer. It allows you to either analyze traffic in real time or to open saved packet capture files (pcap files). 
 There are rare occasions where pcap files contain information other than network traffic such as mouse movements, but 
