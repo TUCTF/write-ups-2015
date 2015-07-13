@@ -2,7 +2,7 @@
 
 ##Overview
 For this challenge we were only given a url and a port `interview.polictf.it:80`
-Upon connecting to the url on port 80 we are presented with a banner than reads Department of Defense: Restricted Access Only. It looks a lot like a bash prompt thought with username being fish and computer name being sword.
+Upon connecting to the url on port 80 we are presented with a banner than reads `Department of Defense: Restricted Access Only`. It looks a lot like a bash prompt thought with username being fish and computer name being sword.
 
 ##Challenge Solution
 With everything we know up until this point, something should smell a little fishy (pun intended). For those of you who have seen it, there have been a lot of references to the movie Swordfish. Keep that in mind. At the moch bash prompt my first idea was to try and get an idea of what commands were accepted. Trying `?` didn't work but typing `help` generates the following:
@@ -33,7 +33,7 @@ fish@sword:~$ hint
     address: a not so easily reachable IP address
 Very simple...isn't it?
 ```
-Hmm, I feel like this is how we get the flag! These hints are kind of vague so what I did was do a little bit of Googling and watched the Swordfish interview scene (sounds pretty fitting, right?). If you watch closely during the interview scene, Hugh Jackman types some ip addresses.. If you look close enough you'll see the ip addresses are not valid ips.. I made a list of these ips:
+Hmm, I feel like this is how we get the flag! These hints are kind of vague so what I did was do a little bit of Googling and watched the Swordfish interview scene (sounds pretty fitting, right?). If you watch closely during the interview scene, Hugh Jackman types some ip addresses.. If you look close enough, you'll see the ip addresses are not valid ips.. I made a list of these ips:
 ```
 312.5.125.233
 291.12.112.323
