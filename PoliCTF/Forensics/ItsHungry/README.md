@@ -12,9 +12,7 @@ This challenge was explained to be a hidden challenge and than the above, no oth
 
 ## Challenge Solution
 Chiptune is the genre describing the art of piecing together a song from old video game sounds. 
-This led us to download the music file that played in the background on the main page of PoliCTF 2015: 
-
-        [oldmcdonald.flac](oldmcdonald.flac?raw=true)
+This led us to download the music file that played in the background on the main page of PoliCTF 2015: [oldmcdonald.flac](oldmcdonald.flac?raw=true)
 
 The first thing we tried was to open it in [Audacity](http://www.fosshub.com/Audacity.html/audacity-win-2.1.0.exe) and attempt a vocal removal. This yielded no results, so we decided
 to take a look at the spectrogram of the audio. This showed three locations that seemed suspect. Zooming in on the first 
