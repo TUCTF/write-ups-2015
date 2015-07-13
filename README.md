@@ -4,7 +4,7 @@ This is a repository for TU's CTF team write-ups
 ## Solution Categories
 
 ### Cryptography
-
+* [Exorcise](PoliCTF/Crypto/Exorcise/) - Finding XOR Key
 
 ### Exploitation
 * [team](Backdoorctf15/team_600/) - Format String Vulnerability
@@ -30,5 +30,6 @@ This is a repository for TU's CTF team write-ups
 * [qr](Backdoorctf15/qr_75/) - Decoding QR codes
 * [mathwiz](DefConQual15/mathwiz/) - Solving math problems
 
-
+### Miscellaneous
+* [HardInterview](PoliCTF/GrabBag/HardInterview/) - Breadcrumbs
 
