@@ -1,7 +1,7 @@
 PoliCTF 2015
 JOHN IN THE MIDDLE
 100 Points - SOLVED
-Can John hijack your surfin'? :) 
+Can John hijack your surfin'? :)
 GPG key: GhairfAvvewvukDetolicDer-OcNayd#
 Download
 
