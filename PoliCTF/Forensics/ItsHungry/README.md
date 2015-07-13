@@ -52,6 +52,6 @@ The resulting letters were:
 
 This, unfortunately, was not the flag. However, from it we were able to deduce that the flag was probably:
 
-        FEEDADEADBEEF
+        FEEDDADEADBEEF
 
 Voila and Presto! We have the flag! 
