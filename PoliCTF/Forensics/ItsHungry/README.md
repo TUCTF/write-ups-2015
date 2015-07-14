@@ -53,3 +53,5 @@ This, unfortunately, was not the flag. However, from it we were able to deduce t
         FEEDDADEADBEEF
 
 Voila and Presto! We have the flag! 
+
+DISCLAIMER: We did NOT get the flag during the competition. There are writeups by teams that got the flag during the competition. The purpose of this writeup is to present an alternate way of retrieving the flag.
