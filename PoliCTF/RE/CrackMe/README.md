@@ -113,5 +113,7 @@ ee[[c%l][c{g}[%{%Mc%spdgj=]T%aat%=O%bRu%sc]c%ti[o%n=Wcs%=No[t=T][hct%=buga[d=As%
 Now doesn't that look interesting? Let's plug it into our script and see what it spits out. If you simply change 
 the `getString(0x7f0c0038)` in the above script to 
 `ee[[c%l][c{g}[%{%Mc%spdgj=]T%aat%=O%bRu%sc]c%ti[o%n=Wcs%=No[t=T][hct%=buga[d=As%=W]e=T%ho[u%[%g]h%t[%}%` and run it, 
-you get `eeflag{Maybe_This_Obfuscation_Was_Not_That_Good_As_We_Thought}` as the output. Sure enough the flag is 
+you get `eeflag{Maybe_This_Obfuscation_Was_Not_That_Good_As_We_Thought}` as the output. 
+
+Sure enough the flag is 
 `flag{Maybe_This_Obfuscation_Was_Not_That_Good_As_We_Thought}`
