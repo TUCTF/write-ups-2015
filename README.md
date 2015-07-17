@@ -17,7 +17,7 @@ This is a repository for TU's CTF team write-ups
 * [JohnInTheMiddle](PoliCTF/Forensics/JohnInTheMiddle/) - Object Export
 
 ### Miscellaneous
-* [HardInterview](PoliCTF/GrabBag/HardInterview/) - Breadcrumbs
+* [HardInterview](PoliCTF/GrabBag/HardInterview/) - Trivia and Research
 
 ### Programming
 * [mathwiz](DefConQual15/mathwiz/) - Solving math problems
