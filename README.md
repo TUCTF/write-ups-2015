@@ -20,6 +20,7 @@ This is a repository for TU's CTF team write-ups
 * [HardInterview](PoliCTF/GrabBag/HardInterview/) - Trivia and Research
 
 ### Programming
+* [John The Dropper](PoliCTF/GrabBag/Dropper)
 * [mathwiz](DefConQual15/mathwiz/) - Solving math problems
 * [qr](Backdoorctf15/qr_75/) - Decoding QR codes
 * [rapidfire](Backdoorctf15/rapidFire_500/) - Answering different questions
