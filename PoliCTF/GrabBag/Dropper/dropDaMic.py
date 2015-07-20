@@ -17,9 +17,7 @@ CODE = {'A': '.-',     'B': '-...',   'C': '-.-.',
         }
 # Extended characters found here: https://github.com/agwells/dotdash-keyboard-android/wiki/Wells-extended-Morse-code
 
-
 f = open("drop.txt", "r")
-
 s = f.readlines()[0]
 
 morse = s.replace("11111", "\n").replace("0000", "- ").\
