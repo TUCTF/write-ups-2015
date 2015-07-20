@@ -28,18 +28,14 @@ morse = s.replace("11111", "\n").replace("0000", "- ").\
 
 flag = ""
 
-decode = morse.split("\n")
+for word in morse.split("\n"):
 
-for y in decode:
-    y = y.split(" ")
-
-    for x in y:
-        for z in CODE:
-            if CODE[z] == x:
-                flag += z
+    for unit in word.split(" "):
+        for char in CODE:
+            if CODE[char] == unit:
+                flag += char
     # This is where the 5 11111's were
     flag += "\n"
-
 
 # Hint said flag was lowercase
 print flag.lower()
