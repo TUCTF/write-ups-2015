@@ -48,6 +48,7 @@ Request timeout for icmp_seq 26
 64 bytes from 52.18.119.20: icmp_seq=30 ttl=51 time=135.376 ms
 64 bytes from 52.18.119.20: icmp_seq=31 ttl=51 time=135.436 ms
 ```
+Note: I believe we just pinged for a long time and then copied and pasted the text into a file.
 
 Fom this we guessed that two successful pings meant the end of a morse code unit, one successful ping was the divider between the individual dots and dashes and five successful was the end of that word/phrase. Using that logic, the above section decoded to `... --- ...` or `--- ... ---`. One of those represents `SOS` and the other `OSO`. Naturally we chose the `SOS` route which corresponded to 3 drops equating a dash (-) and a single drop represented a dot/dit (.)
 
