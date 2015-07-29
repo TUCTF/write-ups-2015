@@ -26,7 +26,7 @@ This is a repository for TU's CTF team write-ups
 * [rapidfire](Backdoorctf15/rapidFire_500/) - Answering different questions
 
 ### Reverse Engineering
-* [Crack Me If You Can](PoliCTF/RE/CrackMe)
+* [Crack Me If You Can](PoliCTF/RE/CrackMe) - Reversing an Android apk to find the magic key
 
 ### Steganography
 * [JohnInTheMiddle](PoliCTF/Forensics/JohnInTheMiddle/) - Hidden Text
